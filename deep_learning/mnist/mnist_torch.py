@@ -22,9 +22,9 @@ class Model(nn.Module):
         self.fc2 = nn.Linear(128, 10)   # 128 inputs with size of 10 final output layer
         
     def forward(self, x):
-        x = torch.flatten(x, 1)
-        x = torch.nn.functional.relu(self.fc1(x))
-        x = self.fc2(x)
+        x = torch.flatten(x, 1) #input vector
+        x = torch.nn.functional.relu(self.fc1(x)) # linear forward and adding non linearity
+        x = self.fc2(x) # forward
         return x
     
 if __name__ == "__main__":
