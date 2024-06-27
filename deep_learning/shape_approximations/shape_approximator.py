@@ -1,13 +1,19 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from tensorflow.keras.models import Sequential, load_model
+from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Flatten, Reshape
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.losses import MeanSquaredError
 from PIL import Image
+import argparse
+
+# Parse command-line arguments
+parser = argparse.ArgumentParser(description='Image Reconstruction with Neural Network')
+parser.add_argument('image_path', type=str, help='Path to the input image file')
+args = parser.parse_args()
 
 # Load the image
-image_path = "shapes/face2.jpg"
+image_path = args.image_path
 image = Image.open(image_path).convert('L')  # Convert to grayscale
 image = image.resize((128, 128))  # Resize for simplicity
 image = np.array(image) / 255.0  # Normalize pixel values
@@ -54,4 +60,4 @@ for epoch in range(epochs):
         plt.show()
 
 # Save the trained model
-model.save('image_approximator.h5')  # Save model
+model.save('output_model/image_approximator.h5')  # Save model

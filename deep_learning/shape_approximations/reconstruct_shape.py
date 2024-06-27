@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the saved model
-saved_model = load_model('image_approximator.h5')
+saved_model = load_model('output_model/image_approximator.h5')
 
 # Generate an empty input tensor (all zeros) of the same shape as the original input
 input_image = np.zeros((1, 128, 128, 1))  # Example: empty input tensor of shape (1, 128, 128, 1)
