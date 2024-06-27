@@ -38,8 +38,8 @@ model = Sequential([
 model.compile(optimizer=Adam(), loss=MeanSquaredError())
 
 # Train the model and visualize the process
-epochs = 100
-display_interval = 10
+epochs = 20
+display_interval = 1
 
 for epoch in range(epochs):
     model.fit(np.array([image]), np.array([image]), epochs=1, verbose=0)
