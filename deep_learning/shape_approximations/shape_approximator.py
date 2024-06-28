@@ -38,7 +38,7 @@ model = Sequential([
 model.compile(optimizer=Adam(), loss=MeanSquaredError())
 
 # Train the model and visualize the process
-epochs = 20
+epochs = 10
 display_interval = 1
 
 for epoch in range(epochs):
